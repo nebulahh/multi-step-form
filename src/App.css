@@ -23,7 +23,15 @@
   }
  
 } */
- 
+
+/*html, body > #root div {
+  height: 100%;
+}*/
+
+body {
+  font-size: 16px;
+}
+
 /* Tab Navigation */
 ul.nav {
   /* width: 60%;
@@ -69,11 +77,25 @@ ul.nav li.active {
 }
 
 .form {
-  @apply w-11/12 bg-white absolute top-4.5 left-4 rounded-3xl px-6 py-7;
+  @apply w-11/12 bg-white shadow-2xl md:static absolute top-4.5 left-4 rounded-3xl px-4 py-7 md:w-full;
 }
+
+.form-container {
+  @apply mx-auto my-0;
+}
+
+.footer {
+  @apply absolute md:static bottom-0 w-full h-16 px-3 flex items-center md:pr-0;
+}
+/* @media all and (min-width: 768px) {
+  .form {
+    @apply static
+  }
+} */
  
 /* Tab Content Styles */
 .TabContent {
   font-size: 2rem;
   text-align: center;
 }
+

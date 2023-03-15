@@ -1,30 +1,31 @@
 import bgImg from '../../assets/bg-sidebar-mobile.svg'
 import './Navbar.css'
 
-const Navbar = ({selectedId}) => {
-  let className = 'border cursor-default rounded-full border-solid border-white flex justify-center items-center text-white w-8 h-8'
-  const steps_indicator = ['1', '2', '3', '4']
-  console.log(typeof selectedId);
-  if (steps_indicator.includes(selectedId)) {
-    steps_indicator[Number(selectedId)]
-    className += ' bg-[#d6d9e6] text-[#02295a]'
-  }
+const Navbar = ({ currentStep }) => {
+  
+  const steps_indicator = ['Your Info', 'Select PLan', 'Add-Ons', 'Summary']
+
+  let className = 'border cursor-default rounded-full border-solid border-white flex justify-center items-center text-white w-8 md:justify-center h-8'  
+  className += ' bg-[#d6d9e6] text-[#02295a]'
+  
   return (
-    <header style={{
-      backgroundImage: `url(${bgImg})`
-    }} className="bg-img flex justify-center gap-3 pt-4">
-      {
+    <header style={{backgroundImage: `url(${bgImg})`}} 
+    className="bg-img md:justify-start flex md:flex-col w-screen md:w-[30%] h-20 md:h-[100%] rounded mx-0 my-auto justify-center gap-3 md:pl-8 md:pt-8 pt-4">
+      {   
         steps_indicator.map((step, index) => {
-          return <div id={index} key={index} className={className}>{step}</div>
+          return <div className='flex gap-3 md:items-center items-start' key={index}>
+            <div className={className}>{index}</div>
+            <div className='hide'>
+              <p className='text-[#9699ab]'>Step {index}</p>
+              <b className='text-white'>{step}</b>
+            </div>
+          </div>
         })
       }
-      {/* <div className={className}>1</div>
-      <div className={className}>2</div>
-      <div className={className}>3</div>
-      <div className={className}>4</div> */}
 
     </header>
   )
 }
+
 
 export default Navbar

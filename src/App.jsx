@@ -1,10 +1,9 @@
 import reactLogo from './assets/react.svg'
 import './App.css'
 import Navbar from './Components/Navbar/Navbar'
-import Form from './Components/Form/Form'
+import Form from './Components/Form'
 // import Footer from './Components/Footer/Footer'
 // import Tabs from './Components/Tabs/Tabs'
-
 import { useState } from 'react'
 import { FormProvider } from './context/formContextApi'
 // import { Form } from 'formik'
@@ -12,14 +11,12 @@ import { FormProvider } from './context/formContextApi'
 function App() {
 //  const {steps, currentStep} = useContext(FormContext)
 //  console.log(steps);
-
-
 //  console.log(currentStep);
   return (
     // <FormProvider>
     // <FormProvider>
     <FormProvider>
-      <Form/>
+      <Form />
     </FormProvider>
 
   //   <div className='relative h-screen border-black border-solid border-4 bg-[#d6d9e6]'>

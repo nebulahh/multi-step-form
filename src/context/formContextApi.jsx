@@ -1,9 +1,4 @@
-import { createContext, useState, useEffect } from "react";
-import UserInfoForm from "../Components/UserInfo/UserInfo";
-import Plan from '../Components/Plan/Plan'
-import AddOns from '../Components/AddOns/AddOns'
-import Summary from '../Components/Summary/Summary'
-import Thanks from '../Components/Thanks/Thanks'
+import { createContext, useState } from "react";
 
 const FormContext = createContext({})
 
@@ -18,51 +13,86 @@ export const FormProvider = ({ children }) => {
 
   const [currentStep, setCurrentStep] = useState(0)
 
+  const planOptions = {
+    Arcade: {
+      monthly: 9,
+      yearly: 90,
+    },
+    Advanced: {
+      monthly: 12,
+      yearly: 120,
+    },
+    Pro: {
+      monthly: 15,
+      yearly: 150,
+    },
+    onlineServices: {
+      monthly: 1,
+      yearly: 10,
+    },
+    largerStorage: {
+      monthly: 2,
+      yearly: 20,
+    },
+    customizableProfile: {
+      monthly: 2,
+      yearly: 20,
+    },
+  };
 
   const [userInfo, setUserInfo] = useState({
     name: '',
     email: '',
     phone_num: '',
-    plan: '',
-    online_service: false,
-    larger_storage: false,
-    customizable_profile: false,
+    user_plan: '',
+    plan_duration: false,
+    isOnlineService: false,
+    isLargerStorage: false,
+    isCustomizableProfile: false,
   })
 
   const handleNextStep = (newData) => {
+    console.log(newData);
     setUserInfo(prev => ({...prev, ...newData}))
     setCurrentStep(prev => prev + 1)
-    console.log(newData);
   } 
+
+  function confirm() {
+    setCurrentStep(prev => prev + 1)
+  }
+
+  function toggleDuration(e) {
+    setUserInfo(prev => ({...prev, plan_duration: e.target.checked}))
+  }
+
+  const saveInfo = (newData) => {
+    setUserInfo(prev => ({...prev, user_plan: newData}))
+  }
+
+  const goToStepTwo = () => {
+    setCurrentStep(1)
+  }
 
 
   const handlePrevStep = (newData) => {
+    if (currentStep == 0) {
+      setCurrentStep(0)
+    }
     setUserInfo(prev => ({...prev, ...newData}))
     setCurrentStep(currentStep - 1)
   } 
 
   const handleChange = (e) => {
-    const type = e.target.type
-
     const name = e.target.name
-    let value; 
-    if (type === 'checkbox') {
-      value = e.target.checked
-    } else {
-      value = e.target.value
-    }
-
+    
     setUserInfo(prev => ({
       ...prev,
-      [name]: value
+      [name]: e.target.checked
     }))
   }
 
-
-  const isSubmit = [...Object.values(userInfo)].every(Boolean) && page === Object.keys(title).length - 1
-  
   return (
-    <FormContext.Provider value={{title, handleNextStep, handlePrevStep, currentStep, setCurrentStep, userInfo}}>
+    <FormContext.Provider value={{title, planOptions, confirm, toggleDuration, goToStepTwo, handleNextStep, handleChange, saveInfo, handlePrevStep, currentStep, setCurrentStep, userInfo}}>
        {children}
     </FormContext.Provider>
   )

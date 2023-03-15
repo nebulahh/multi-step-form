@@ -5,3 +5,9 @@
   border: 1px solid;
   height: 120px;
 }
+
+@media all and (max-width: 768px) {
+  .hide {
+    display: none;
+  }
+}
