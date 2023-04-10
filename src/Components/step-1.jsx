@@ -17,16 +17,13 @@ const StyledErrorMessage = styled.div`
   font-size: 12px;
   color: red;
   margin-top: 0.25rem;
-
 `
-
   return (
     <section className='form-container'>
       <Formik
         initialValues={userInfo}
         validationSchema={Yup.object({
                name: Yup.string()
-               .max(15, 'Must be 15 characters or less')
                .trim()
                .required('This field is required'),
                phone_num: Yup.string().matches(phoneRegExp, 'Phone number is not valid').required('This field is required'),
@@ -63,7 +60,7 @@ const StyledErrorMessage = styled.div`
                 <div className="flex flex-col pb-4">
                   <div className='flex justify-between'>
                     <label htmlFor="phone_num">Phone Number</label> 
-                    {/* <ErrorMessage name='phone_num'/> */}
+      
                   {formik.touched.phone_num && formik.errors.phone_num ? (<StyledErrorMessage>{formik.errors.phone_num}</StyledErrorMessage>) : null}
                   </div>
                   <input type="tel" className='border p-1' {...formik.getFieldProps('phone_num')} id='phone_num' placeholder='+ 1 234 567 890'/>

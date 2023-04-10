@@ -11,12 +11,7 @@ const Plans = () => {
  const { saveInfo, planOptions, userInfo, toggleDuration, handleNextStep, handlePrevStep } = useContext(FormContext)
 
 const handleSubmit = (values) => {
-  console.log(values);
-  // if (values.user_plan) {
     handleNextStep(values)
-  // } else {
-    // return
-  // }
 }
 
 function goBack() {

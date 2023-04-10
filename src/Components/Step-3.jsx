@@ -8,8 +8,7 @@ const AddOns = () => {
   const { planOptions, handleChange, userInfo, handleNextStep, handlePrevStep } = useContext(FormContext)
  
  const handleSubmit = (values) => {
-   handleNextStep(values)
-  // console.log(values);
+   handleNextStep(values);
  }
  
  function goBack() {

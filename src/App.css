@@ -1,76 +1,15 @@
-/* Style App.js wrapper */
-/* .App {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-  */
-/* Tab Container */
-/* .Tabs {
-  width: 80%;
-  height: auto;
-  min-height: 400px;
-  background: #053742;
-  margin: 3.5rem auto 1.5rem;
-  padding: 2rem 1rem;
-  color: #E8F0F2;
-  border-radius: 2rem;
-  @media (max-width: 769px) {
-    padding: 2rem 0;
-  }
- 
-} */
-
-/*html, body > #root div {
-  height: 100%;
-}*/
-
 body {
   font-size: 16px;
 }
 
 /* Tab Navigation */
 ul.nav {
-  /* width: 60%;
-  margin: 0 auto 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 1px solid #39A2DB;
-  border-radius: 2rem;
-  padding-left: 0px;
-  @media (max-width: 768px) {
-    width: 90%;
-  } */
   @apply flex justify-center gap-3 pt-4 !important;
 }
  
 ul.nav li {
-  /* width: 50%;
-  padding: 1rem;
-  list-style: none;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.7s; */
   @apply border cursor-default w-8 h-8 rounded-full border-solid border-white flex justify-center items-center text-white !important;
 }
- 
-/* ul.nav li:first-child {
-  border-bottom-left-radius: 2rem;
-  border-top-left-radius: 2rem;
-}
-  */
-/* ul.nav li:last-child {
-  border-bottom-right-radius: 2rem;
-  border-top-right-radius: 2rem;
-}
- 
-ul.nav li:hover {
-  background: rgba(50, 224, 196, 0.15);
-} */
  
 ul.nav li.active {
   background: #39A2DB;
@@ -87,11 +26,6 @@ ul.nav li.active {
 .footer {
   @apply absolute md:static bottom-0 w-full h-16 px-3 flex items-center md:pr-0;
 }
-/* @media all and (min-width: 768px) {
-  .form {
-    @apply static
-  }
-} */
  
 /* Tab Content Styles */
 .TabContent {

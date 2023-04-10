@@ -10,8 +10,7 @@ import Navbar from "./Navbar/Navbar"
 
 const Form = () => {
   const {currentStep} = useContext(FormContext)
-  // console.log(steps);
-  // console.log(currentStep);
+  
  const steps = [<UserInfoForm/>, <Plan />, <AddOns />, <Summary />, <Thanks />]
 
 
