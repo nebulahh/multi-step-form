@@ -16,7 +16,7 @@ const Form = () => {
 
   return (
  
-    <div className='relative md:static md:p-3 md:gap-8 md:flex md:items-center md:bg-white h-screen border-black border-solid border-8 bg-[#d6d9e6]'>
+    <div className='body relative md:static md:p-3 md:gap-8 md:flex md:items-center h-screen border-black border-solid border-8 bg-[#bfe2fd]'>
     <Navbar currentStep={currentStep} />
     {steps[currentStep]}
     </div>

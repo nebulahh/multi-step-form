@@ -13,7 +13,7 @@ const Navbar = ({ currentStep }) => {
       {   
         steps_indicator.map((step, index) => {
           return <div className='flex gap-3 md:items-center items-start' key={index}>
-            <div className={currentStep === index ? className + ' bg-[#d6d9e6] text-[#02295a]' : className}>{index}</div>
+            <div className={currentStep === index ? className + ' bg-[#d6d9e6] text-[#000000]' : className}>{index}</div>
             <div className='hide'>
               <p className='text-[#9699ab]'>Step {index}</p>
               <b className='text-white'>{step}</b>

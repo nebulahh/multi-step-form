@@ -62,7 +62,7 @@ return (
                 </small>
               {userInfo.plan_duration && <small>2 months free</small>}
                </div>
-               <input type="radio" name="user_plan" id="arcade" onChange={handleChange} value="Arcade" checked={userInfo.user_plan === 'Arcade'} required/>
+               <input type="radio" className='hidden' name="user_plan" id="arcade" onChange={handleChange} value="Arcade" checked={userInfo.user_plan === 'Arcade'} required/>
               </label>
              </div>
 
@@ -82,7 +82,7 @@ return (
                 </small>
              {userInfo.plan_duration && <small>2 months free</small>}
               </div>
-              <input type="radio" name="user_plan" id="advanced" value="Advanced" onChange={handleChange} checked={userInfo.user_plan === 'Advanced'} required/>
+              <input type="radio" className='hidden' name="user_plan" id="advanced" value="Advanced" onChange={handleChange} checked={userInfo.user_plan === 'Advanced'} required/>
              </label>
             </div>
 
@@ -102,11 +102,12 @@ return (
                </small>
               {userInfo.plan_duration && <small>2 months free</small>}
               </div>
-              <input type="radio" name="user_plan" id="pro" onChange={handleChange} value="Pro" checked={userInfo.user_plan === 'Pro'} required/>
+              <input type="radio" name="user_plan" className='hidden' id="pro" onChange={handleChange} value="Pro" checked={userInfo.user_plan === 'Pro'} required/>
              </label>
              {/* <ErrorMessage name='user_plan'/> */}
             </div>
             </div>
+            
 
             <div className="switcher bg-mongolia flex items-center gap-2 p-2 mb-20 justify-center">
              <p className="text-cool-gray font-medium sw-active">Monthly</p>
@@ -140,3 +141,5 @@ return (
 }
 
 export default Plans
+
+
