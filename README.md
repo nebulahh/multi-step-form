@@ -3,7 +3,7 @@ A multis-step form that forces users to enter their data in a series of steps.
 
 **Link to project:** [https://dazzling-pithivier-779ed6.netlify.app/](https://dazzling-pithivier-779ed6.netlify.app/)
 
-
+<img src="multi-step-form.png" alt="banner"/>
 
 ## How It's Made:
 
