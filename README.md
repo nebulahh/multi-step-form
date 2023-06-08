@@ -1,5 +1,5 @@
 # A Multi-Step Form
-A multis-step form that forces users to enter their data in a series of steps.
+A multi-step form that forces users to enter their data in a series of steps.
 
 **Link to project:** [https://dazzling-pithivier-779ed6.netlify.app/](https://dazzling-pithivier-779ed6.netlify.app/)
 
